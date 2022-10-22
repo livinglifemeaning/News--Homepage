@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+:root {
+  --f-primary: "Inter", sans-serif;
+  --c-offWhite: hsl(36, 100%, 99%);
+  --c-gray-mid: hsl(233, 8%, 79%);
+  --c-gray-dark: hsl(236, 13%, 42%);
+  --c-dark: hsl(240, 100%, 5%);
+  --c-orange: hsl(35, 77%, 62%);
+  --c-red: hsl(5, 85%, 63%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+  }
+body {
+  min-height: 100vh;
+  font-family: var(--f-primary);
+  background-color: var(--c-offWhite); 
+}
+
+main {
+  padding: 2rem 8rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "featured new"
+    "topThree topThree"; 
+    grid-gap: 3rem; 
+  
+}
+
+.nav li, .threeArticlesBox .textBox .preview, .featuredBox .textBox .preview{
+  color: var(--c-gray-dark); 
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: header;
+}
+
+.featuredBox {
+  grid-area: featured;
+}
+
+.newArticlesBox {
+  grid-area: new;
+  background-color: var(--c-dark);
+  color: var(--c-offWhite); 
+  padding: 2rem 1rem; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem; 
+    
+}
+
+.threeArticlesBox {
+  grid-area: topThree;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+  gap: 1rem; 
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav li{
+    cursor: pointer;  
+}
+
+.nav li:hover{
+    color: var(--c-red)
+}
+
+.featuredBox .title{
+    font-size: 3rem; 
+    width: 20rem; 
+    line-height: 1em; 
+    font-weight: 800;  
+  margin-bottom: 1rem; 
+}
+
+
+.featuredBox .textBox{
+  margin-top: 2rem; 
+    display: flex; 
+}
+
+.featuredBox .side{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem; 
+}
+
+.btn{
+  color: var(--c-offWhite); 
+  background-color: var(--c-red);
+  border: none; 
+  cursor: pointer; 
+  padding: .5rem 1.5rem; 
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+.btn:active{
+  scale: .98; 
+}
+.btn:hover{
+  background-color: var(--c-dark); 
+}
+.newArticlesBox .new{
+font-size: 2.5rem; 
+font-weight: 700; 
+color: var(--c-orange); 
+letter-spacing: .01em;
+}
+
+.newArticlesBox .title{
+  font-size: 1.2rem; 
+  cursor: pointer; 
+  
+}
+
+.newArticlesBox .title:hover{
+  color: var(--c-orange); 
+}
+
+.newArticlesBox .preview{
+  color: var(--c-gray-mid); 
+  margin: .2rem 0 1rem; 
+}
+
+.newArticle{
+  border-bottom: solid 1px var(--c-gray-mid);
+}
+
+.threeArticle{
+  display: flex; 
+  gap: 1rem;
+
+}
+
+.threeArticle .textBox{
+  display: flex; 
+  flex-direction: column;
+   gap: .5rem;  
+}
+
+.threeArticle .title{
+  font-size: 1.1rem; 
+  font-weight: 800; 
+  color: var(--c-dark);
+  cursor: pointer;
+}
+
+.threeArticle .title:hover{
+  color: var(--c-red); 
+}
+.threeArticle .number{
+  font-size: 2rem; 
+  color: var(--c-gray-mid);
+  font-weight: 700; 
+}
+
+.btn, .title{
+  transition: all 200ms ease;
+}
+
+@media (max-width: 750px) {
+  main{
+    padding: 3rem 1.5rem; 
+  }
+  .grid{
+
+    grid-template-areas: 
+    'header'
+    'featured'
+    'new' 
+    'topThree' ;
+    
+  }
+
+  .threeArticlesBox{
+    flex-direction: column;   
+  }
+
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;  
+  }
+
+  .nav{
+    gap: .8rem; 
+     
+  }
+  .featuredBox .textBox{
+    flex-direction: column;  
+  }
+}
+
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
